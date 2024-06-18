@@ -1,0 +1,16 @@
+<div *ngIf="article" class="article-container">
+    <header>{{ article.title }}</header>
+    <hr>
+    <div class="article-content">
+      <div *ngIf="article.image" class="article-image">
+        <img [src]="article.image" [alt]="article.title">
+      </div>
+      <div class="article-sections">
+        <div *ngFor="let section of article.sections" class="article-section">
+          <h2>{{ section.sectionTitle }}</h2>
+          <p>{{ section.sectionText }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

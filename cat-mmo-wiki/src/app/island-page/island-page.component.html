@@ -1,0 +1,12 @@
+<div class="island-card">
+    <img class="island-image" src="{{ island.image }}" alt="{{ island.name }} Island">
+    <div class="island-details">
+      <h2>{{ island.name }}</h2>
+      <p>{{ island.description }}</p>
+      <h3>Enemies:</h3>
+      <ul>
+        <li *ngFor="let enemy of island.enemies">- {{ enemy.name }}</li>
+      </ul>
+    </div>
+  </div>
+  

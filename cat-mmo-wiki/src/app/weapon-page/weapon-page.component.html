@@ -1,0 +1,20 @@
+<div class="weapon-column" (click)="changeArticle(weapon.id)">
+  <div class="weapon-image">
+    <img [src]="weapon.image" [alt]="weapon.name">
+  </div>
+  <div class="weapon-info" >
+    <header>{{ weapon.name }}</header>
+    <hr>
+    <p>Rarity: <span class="rarity">{{ weapon.rarity }}</span></p>
+    <p>Stats: <span class="stats">{{ weapon.stats }}</span></p>
+    <hr>
+    <p>{{ weapon.description }}</p>
+    <hr>
+    <p>Crafting:</p>
+    <ul>
+      <li *ngFor="let crafting of weapon.crafting">
+        <img [src]="crafting.icon" [alt]="crafting.name" class="crafting-icon"> {{ crafting.amount }} x {{ crafting.name }}
+      </li>
+    </ul>
+  </div>
+</div>

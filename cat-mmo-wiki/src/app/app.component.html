@@ -4,15 +4,19 @@
 
 <nav class="category-nav">
   <ul>
-    <li><a routerLink="/mechanics"><img src="path-to-your-icon/mechanics-icon.png" alt="Mechanics Icon" class="icon"> Mechanics</a></li>
-    <li><a routerLink="/islands"><img src="path-to-your-icon/islands-icon.png" alt="Islands Icon" class="icon"> Islands</a></li>
-    <li><a routerLink="/armors"><img src="https://raw.githubusercontent.com/LaylaTS/cat-mmo/main/RP/textures/items/black_cat_dress.png" alt="Armors Icon" class="icon"> Armors</a></li>
-    <li><a routerLink="/weapons"><img src="https://raw.githubusercontent.com/LaylaTS/cat-mmo/main/RP/textures/items/slimebow_sword.png" alt="Weapons Icon" class="icon"> Weapons</a></li>
-    <li><a routerLink="/enemies"><img src="path-to-your-icon/enemies-icon.png" alt="Enemies Icon" class="icon"> Enemies</a></li>
-    <li><a routerLink="/dungeons"><img src="https://files.catbox.moe/7vq9k6.png" alt="Dungeons Icon" class="icon"> Dungeons</a></li>
+    <li (click)="pageList=0"><a><img src="https://cdn.discordapp.com/attachments/939527221603872789/1247630794021667016/magnifyingGlass.png?ex=6660ba39&is=665f68b9&hm=746bcd6f84b943e4900fe535a1c8fe3bff273c9e2e6d9c11793ff521d3535cd1&" alt="Mechanics Icon" class="icon"> Search</a></li>
+    <li (click)="pageList=1"><a><img src="https://minecraft.wiki/images/Sand_JE5_BE3.png?ae2df&format=original" alt="Islands Icon" class="icon"> Islands</a></li>
+    <li (click)="pageList=2"><a><img src="https://files.catbox.moe/6sgnl2.png" alt="Weapons Icon" class="icon"> Weapons</a></li>
+    <li (click)="pageList=3"><a><img src="https://files.catbox.moe/iphu0q.png" alt="Armors Icon" class="icon"> Armors</a></li>
+    <li (click)="pageList=4"><a><img src="https://minecraft.wiki/images/thumb/Slime_JE3_BE2.png/60px-Slime_JE3_BE2.png?5b6a7" alt="Enemies Icon" class="icon"> Enemies</a></li>
+    <li (click)="pageList=5"><a><img src="https://files.catbox.moe/7vq9k6.png" alt="Dungeons Icon" class="icon"> Dungeons</a></li>
   </ul>
 </nav>
 
 <div class="content">
-  <router-outlet></router-outlet>
+  <app-article-search *ngIf="pageList==0" [articles]="articles"></app-article-search>
+  <app-island-list *ngIf="pageList==1"></app-island-list>
+  <app-weapon-list *ngIf="pageList==2"></app-weapon-list>
+  <app-article *ngIf="pageList==-1&&currentArticle!=undefined" [article]="currentArticle"></app-article>
+  
 </div>

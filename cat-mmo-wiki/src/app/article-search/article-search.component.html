@@ -1,0 +1,14 @@
+<div class="search-container">
+  <input type="text" (input)="onSearch($event)" placeholder="Search articles..." id="article-search-input-bar">
+</div>
+
+<div class="article-grid">
+  <div *ngFor="let article of filteredArticles" class="article-card-sep">
+    <div class="article-card" (click)="changeArticle(article.id)">
+      <img [src]="article.image" alt="{{article.title}}" class="article-image">
+      <div class="article-info">
+        <header>{{ article.title }}</header>
+      </div>
+    </div>
+  </div>
+</div>
